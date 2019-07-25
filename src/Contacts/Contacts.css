@@ -10,12 +10,10 @@
   flex-direction: column;
   width: 300px;
   height: 370px;
-  margin-bottom: 40%;
   background: #EDF1BE;
   overflow-wrap: break-word;
   overflow-y: scroll;
 }
-
 .Contact {
   background: #003300;
   flex: 1;
@@ -28,13 +26,15 @@
 
 .Cinfo {
   border-top:solid 2px #001C00;
+  border-bottom:solid 2px #001C00;
   background: #003300;
   height: 60px;
   padding: 8px;
   cursor: pointer;
   overflow-y: hidden;
+} .Cinfo:hover{
+  border: solid 2px #ccc;}
 
-}
  .Cname {
    display:flex;
    font-size: medium;
