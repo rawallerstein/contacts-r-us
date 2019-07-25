@@ -5,13 +5,22 @@
   box-shadow: 0 2px 3px #ccc;
   padding: 16px;
   text-align: center;
+  float: right;
+  clear:right;
 }
 
 .Cinfo {
-  width: 60%;
+  width: 80%;
   margin: 16px auto;
   border: 1px solid #eee;
   box-shadow: 0 2px 3px #ccc;
   padding: 16px;
   text-align: left;
+  cursor: pointer;
+  overflow-x: hidden;
+}
+
+.Contact {
+  float:left;
+  clear: left;
 }

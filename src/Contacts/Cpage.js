@@ -5,10 +5,10 @@ class Cpage extends React.Component {
   constructor(props){
     super(props);
     this.pageState = {
-      name: 'Example McMann',
-      phone: '555 555 5555',
-      email: 'example.mcmann@yahoo.com',
-      desc: 'A good fella'
+      name: props.name,
+      phone: props.phone,
+      email: props.email,
+      desc: props.desc
     }
   }
   render(){

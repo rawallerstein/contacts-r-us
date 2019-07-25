@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import './App.css';
 import Contacts from './Contacts/Contacts';
 import Cpage from './Contacts/Cpage';
+import ContactList from './Contacts/ContactList';
 
 class App extends Component {
 
@@ -12,6 +13,8 @@ class App extends Component {
     desc: 'A fairly well collected individual.'
   }
 
+  contactState = {data: ContactList}
+
   render() {
   return (
     <div className="App">
@@ -19,7 +22,7 @@ class App extends Component {
         Contacts 'R' Us
       </header>
       <div className='Contacts'>
-        <Contacts />
+        <Contacts/>
       </div>
       <div>
         <Cpage className="Cpage" name={this.pageState.name} phone={this.pageState.phone} email={this.pageState.email} desc={this.pageState.desc}/>

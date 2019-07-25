@@ -1,6 +1,6 @@
 import React from 'react';
 import './Contacts.css';
-import ContactList from './ContactList'
+import ContactList from './ContactList';
 
 class Contacts extends React.Component {
   constructor(props){
@@ -14,7 +14,6 @@ class Contacts extends React.Component {
         <p className="Cname"> {d.name} </p>
         <p className="Cphone">{d.phone}</p>
         <p className="Cemail">{d.email}</p>
-        <p className="Cdesc">{d.description}</p>
         </div>)}
 
     </div>)}
