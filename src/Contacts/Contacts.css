@@ -1,16 +1,69 @@
+@darkerGreen: #001C00;
+@darkGreen: #003300;
+@mediumGreen: #46733E;
+@lightGreen: #EDF1BE;
+
+
 .Cpcontact {
-  width: 60%;
-  margin: 16px auto;
-  border: 1px solid #eee;
-  box-shadow: 0 2px 3px #ccc;
-  padding: 16px;
-  text-align: left;
-  float: right;
-  clear:right;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  height: 370px;
+  margin-bottom: 40%;
+  background: #EDF1BE;
+  overflow-wrap: break-word;
+  overflow-y: scroll;
+}
+
+.Contact {
+  background: #003300;
+  flex: 1;
+  color: #EDF1BE;
+  height: 370px;
+  overflow-y: auto;
+  overflow-x: hidden;
+
 }
 
 .Cinfo {
-  width: 80%;
+  border-top:solid 2px #001C00;
+  background: #003300;
+  height: 60px;
+  padding: 8px;
+  cursor: pointer;
+  overflow-y: hidden;
+
+}
+ .Cname {
+   display:flex;
+   font-size: medium;
+   margin-left: 10px;
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+   margin-top: 0;
+   margin-bottom: 0;
+ }
+
+ .Cphone {
+   display: small;
+   font-size: 10pt;
+   margin-left: 10px;
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+ }
+
+ .Cemail {
+   font-size: x-small;
+   margin-left: 10px;
+   white-space: nowrap;
+   overflow: hidden;
+   text-overflow: ellipsis;
+ }
+
+/* .Cinfo {
   margin: 16px auto;
   border: 1px solid #eee;
   box-shadow: 0 2px 3px #ccc;
@@ -18,9 +71,4 @@
   text-align: left;
   cursor: pointer;
   overflow-x: hidden;
-}
-
-.Contact {
-  float:left;
-  clear: left;
-}
+} */

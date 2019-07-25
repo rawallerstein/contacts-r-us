@@ -31,18 +31,19 @@ class App extends Component {
       <header className="App-header">
         Contacts 'R' Us
       </header>
-
+      <div className="wrapper">
       <div className="Contact">
               {this.contactState.data.map((d, i) =>
-          <div  id={i} className="Cinfo" onClick={this.clickHandler}>
-            <p className="Cname">{d.name} </p>
-            <p className="Cphone">{d.phone}</p>
-            <p className="Cemail">{d.email}</p>
+          <div  key={d.key} id={i} className="Cinfo" onClick={this.clickHandler}>
+            <li className="Cname">{d.name} </li>
+            <li className="Cphone">{d.phone}</li>
+            <li className="Cemail">{d.email}</li>
           </div>)}
       </div>
 
       <div>
         <Cpage className="Cpage" name={this.state.name} phone={this.state.phone} email={this.state.email} desc={this.state.desc}/>
+      </div>
       </div>
 
     </div>
