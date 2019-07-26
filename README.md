@@ -1,4 +1,12 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+TODO: Add some kind of API functionality. Maybe pull contacts from random user API.
+TODO: Need to allow user to add/edit contacts from the app. Currently, contacts need to be changed manually within ContactList.js
+TODO: Need to refactor to change ContactList.js to be .JSON.
+TODO: Make the damn thing less ugly.
+
+
+
+
 
 ## Available Scripts
 
