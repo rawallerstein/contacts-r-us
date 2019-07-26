@@ -1,67 +1,71 @@
 import React, {Component} from 'react';
 import './App.css';
 import Cpage from './Contacts/Cpage';
-import ContactList from './Contacts/ContactList';
-
-//Sorts the Contact List Alphabetically by Name.
-//Need to implement into a button later
-function dynamicSort(property) {
-    var sortOrder = 1;
-    if(property[0] === "-") {
-        sortOrder = -1;
-        property = property.substr(1);
-    }
-    return function (a,b) {
-        var result = (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0;
-        return result * sortOrder;
-    }
-}
-
-ContactList.sort(dynamicSort("name"));
-
-
+import RandomUser from './Contacts/RandomUser';
 
 class App extends Component {
+
+  componentDidMount() {
+    fetch("https://randomuser.me/api/?results=10")
+      .then(res => res.json())
+      .then(
+        (result) => {
+          this.setState({
+            isLoaded: true,
+            items: result.results.sort((a, b) => a.name.first.localeCompare(b.name.first))
+          });
+        },
+        // Note: it's important to handle errors here
+        // instead of a catch() block so that we don't swallow
+        // exceptions from actual bugs in components.
+        (error) => {
+          this.setState({
+            isLoaded: true,
+            error
+          });
+        }
+      )
+  }
 
   state = {
     image: null,
     name: '',
     phone: '',
-    email: '',
-    desc: 'Select Contact'
+    email: 'Select Contact'
   }
 
-  contactState = {data: ContactList}
 
   clickHandler = (event) => {
+    console.log(event.currentTarget.attributes.id.value)
     this.setState({
-                   name: ContactList[event.currentTarget.attributes.id.value].name,
-                   phone: ContactList[event.currentTarget.attributes.id.value].phone,
-                   email: ContactList[event.currentTarget.attributes.id.value].email,
-                   desc: ContactList[event.currentTarget.attributes.id.value].desc
+                   name: this.state.items[event.currentTarget.attributes.id.value].name.first + ' ' + this.state.items[event.currentTarget.attributes.id.value].name.last,
+                   phone: this.state.items[event.currentTarget.attributes.id.value].phone,
+                   email: this.state.items[event.currentTarget.attributes.id.value].email
                  })
   }
 
   render() {
   return (
-    <div className="App">
+          <div className="App">
 
-      <header className="App-header">
-        Contacts 'R' Us
-      </header>
-      <div className="wrapper">
-      <div className="Contact">
-              {this.contactState.data.map((d, i) =>
-          <div  key={d.key} id={i} className="Cinfo" onClick={this.clickHandler}>
-            <li className="Cname">{d.name} </li>
-            <li className="Cphone">{d.phone}</li>
-            <li className="Cemail">{d.email}</li>
-          </div>)}
-      </div>
+            <header className="App-header">
+              Contacts 'R' Us
+            </header>
+                <div className="wrapper">
+                  <div className="Contact">
+                  <RandomUser error={this.state.error} isLoaded={this.state.isLoaded} items={this.state.items}  click={this.clickHandler}/>
+                          {/*{this.contactState.data.map((d, i) =>
+                      <div  key={i} id={i} className="Cinfo" onClick={this.clickHandler}>
+                      {/*  // <li className="Cname">{d.name.first} </li>
+                        // <li className="Cphone">{d.phone}</li>
+                        // <li className="Cemail">{d.email}</li>
+                      </div>)}*/}
 
-      <div>
-        <Cpage className="Cpage" name={this.state.name} phone={this.state.phone} email={this.state.email} desc={this.state.desc}/>
-      </div>
+                  </div>
+
+                <div>
+              <Cpage className="Cpage" name={this.state.name} phone={this.state.phone} email={this.state.email}/>
+            </div>
       </div>
 
     </div>
