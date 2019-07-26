@@ -3,9 +3,28 @@ import './App.css';
 import Cpage from './Contacts/Cpage';
 import ContactList from './Contacts/ContactList';
 
+//Sorts the Contact List Alphabetically by Name.
+//Need to implement into a button later
+function dynamicSort(property) {
+    var sortOrder = 1;
+    if(property[0] === "-") {
+        sortOrder = -1;
+        property = property.substr(1);
+    }
+    return function (a,b) {
+        var result = (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0;
+        return result * sortOrder;
+    }
+}
+
+ContactList.sort(dynamicSort("name"));
+
+
+
 class App extends Component {
 
   state = {
+    image: null,
     name: '',
     phone: '',
     email: '',
@@ -15,7 +34,6 @@ class App extends Component {
   contactState = {data: ContactList}
 
   clickHandler = (event) => {
-    console.log(ContactList[event.currentTarget.attributes.id.value]);
     this.setState({
                    name: ContactList[event.currentTarget.attributes.id.value].name,
                    phone: ContactList[event.currentTarget.attributes.id.value].phone,
