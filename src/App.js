@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './App.css';
-import Cpage from './Contacts/Cpage';
+import ContactPage from './Contacts/ContactPage';
 import RandomUser from './Contacts/RandomUser';
 import Contacts from './Contacts/Contacts.js';
 
@@ -95,7 +95,7 @@ class App extends Component {
                   </div>
 
                 <div>
-              <Cpage className="Cpage" name={this.state.name} phone={this.state.phone} email={this.state.email} savehandler={this.savehandler}/>
+              <ContactPage className="ContactPage" name={this.state.name} phone={this.state.phone} email={this.state.email} savehandler={this.savehandler}/>
               <input type="checkbox" id="democheck" checked={this.state.checked} onChange={this.handleCheckboxChange} text="lmao"/>
               <label for="democheck">Demo Mode</label>
             </div>
