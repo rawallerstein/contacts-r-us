@@ -2,17 +2,20 @@ import React, {Component} from 'react';
 import './App.css';
 import Cpage from './Contacts/Cpage';
 import RandomUser from './Contacts/RandomUser';
+import Contacts from './Contacts/Contacts.js';
+
 
 class App extends Component {
 
   componentDidMount() {
-    fetch("https://randomuser.me/api/?results=10")
+
+    fetch("https://randomuser.me/api/?results=100")
       .then(res => res.json())
       .then(
         (result) => {
           this.setState({
             isLoaded: true,
-            items: result.results.sort((a, b) => a.name.first.localeCompare(b.name.first))
+            results: result.results.sort((a, b) => a.name.first.localeCompare(b.name.first))
           });
         },
         // Note: it's important to handle errors here
@@ -25,23 +28,51 @@ class App extends Component {
           });
         }
       )
-  }
 
+  }
   state = {
     image: null,
     name: '',
     phone: '',
-    email: 'Select Contact'
+    email: 'Select Contact',
+    desc: '',
+    checked: false,
+    items: Contacts.results.sort((a, b) => a.name.first.localeCompare(b.name.first))
   }
-
 
   clickHandler = (event) => {
     console.log(event.currentTarget.attributes.id.value)
     this.setState({
                    name: this.state.items[event.currentTarget.attributes.id.value].name.first + ' ' + this.state.items[event.currentTarget.attributes.id.value].name.last,
                    phone: this.state.items[event.currentTarget.attributes.id.value].phone,
-                   email: this.state.items[event.currentTarget.attributes.id.value].email
+                   email: this.state.items[event.currentTarget.attributes.id.value].email,
+                   index: event.currentTarget.attributes.id.value
                  })
+  }
+  savehandler = (event) => {
+    if (this.state.checked === true) {
+      return(
+        <div></div>
+      );
+    } else {
+
+    }
+  }
+
+
+
+  handleCheckboxChange = () => {
+    this.setState({
+        checked: !this.state.checked,
+    })
+    if (this.state.checked === true) {
+      this.setState({
+        items: Contacts.results.sort((a, b) => a.name.first.localeCompare(b.name.first))
+      })
+    } else {
+      this.setState({
+      items: this.state.results})
+    }
   }
 
   render() {
@@ -64,7 +95,9 @@ class App extends Component {
                   </div>
 
                 <div>
-              <Cpage className="Cpage" name={this.state.name} phone={this.state.phone} email={this.state.email}/>
+              <Cpage className="Cpage" name={this.state.name} phone={this.state.phone} email={this.state.email} savehandler={this.savehandler}/>
+              <input type="checkbox" id="democheck" checked={this.state.checked} onChange={this.handleCheckboxChange} text="lmao"/>
+              <label for="democheck">Demo Mode</label>
             </div>
       </div>
 
