@@ -3,19 +3,52 @@ import { Modal, Button } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.css';
 import './ContactAdd.css';
 
-const ContactAdd = (props) => {
+class ContactAdd extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = { show: false }
+  }
 
+  handleClose = () => {
+    this.setState({
+      show: false
+    })
+  }
+
+  handleShow = () => {
+    this.setState({
+      show: true
+    })
+  }
+
+  handleSave = (event) => {
+    if (localStorage.getItem('items') === null) {
+      localStorage.setItem('items', '[]')
+    }
+    const dat = JSON.parse(localStorage.getItem('items'));
+    dat.push({
+      name: {
+        first: event.target[0].value,
+        last: event.target[1].value},
+      phone: event.target[2].value,
+      email: event.target[3].value,
+      desc: event.target[4].value,
+    });
+    localStorage.setItem('items', JSON.stringify(dat))
+  }
+
+  render() {
   return (
     <>
-      <Button variant="primary" onClick={props.handleShow}>
+      <Button variant="primary" onClick={this.handleShow}>
         Add Contact
       </Button>
 
-      <Modal show={props.show} onHide={props.handleClose}>
+      <Modal show={this.state.show} onHide={this.handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Add Contact</Modal.Title>
         </Modal.Header>
-        <form onSubmit={props.handleSave}>
+        <form onSubmit={this.handleSave}>
           <Modal.Body>
           <div className="form-group">
             <label for="AddFirstName">First Name</label>
@@ -39,15 +72,15 @@ const ContactAdd = (props) => {
           </div>
           </Modal.Body>
         <Modal.Footer>
-          <Button variant="secondary" onClick={props.handleClose}>
+          <Button variant="secondary" onClick={this.handleClose}>
             Close
           </Button>
-          <input type="submit" value="Save Contact" variant="primary" />
+          <input className="btn btn-primary" type="submit" value="Save Contact" variant="primary" />
         </Modal.Footer>
         </form>
       </Modal>
     </>
-  );
+  );}
 }
 
 export default ContactAdd;

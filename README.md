@@ -1,17 +1,10 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-TODO: Capitalize random contacts first and last names. Give user the freedom to use lowercase.
-
-TODO: Give user control over number of random contacts?
-
-TODO: Give user ability to edit contacts.
-
-TODO: Give user ability to add/delete contacts from within app.
-
 TODO: Make the damn thing less ugly.
 
+TODO: Specifically, need to add css to ContactPage element.
 
-
+TODO: Change the demo checkbox to a keybind to clean up the UI. 
 
 
 ## Available Scripts

@@ -8,13 +8,13 @@ class App extends Component {
 
 
   state = {
-    name: '',
+    name: 'Select or add contacts to begin',
     phone: '',
-    email: 'Select Contact',
+    email: '',
     desc: '',
     checked: false,
     items: JSON.parse(localStorage.getItem('items')),
-    item: JSON.parse(localStorage.getItem('items'))
+    item: JSON.parse(localStorage.getItem('items')),
   }
 
 
@@ -55,8 +55,9 @@ class App extends Component {
       phone: this.state.items[event.currentTarget.attributes.id.value].phone,
       email: this.state.items[event.currentTarget.attributes.id.value].email,
       desc: this.state.items[event.currentTarget.attributes.id.value].desc,
-      index: event.currentTarget.attributes.id.value
+      index: event.currentTarget.attributes.id.value,
     })
+    console.log(this.state.index);
   }
 
   handleCheckboxChange = () => {
@@ -72,8 +73,6 @@ class App extends Component {
         items: this.state.item})
     }
   }
-
-
 
   render() {
   return (
@@ -100,6 +99,9 @@ class App extends Component {
             phone={this.state.phone}
             email={this.state.email}
             desc={this.state.desc}
+            handleDelete={this.handleDelete}
+            items={this.state.items}
+            index={this.state.index}
           />
           <input type="checkbox" id="democheck" checked={this.state.checked} onChange={this.handleCheckboxChange} />
           <label htmlFor="democheck">Demo Mode</label>
