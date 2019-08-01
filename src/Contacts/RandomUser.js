@@ -25,9 +25,11 @@ class RandomUser extends React.Component {
         <div>
           {items.map((item, index) => (
             <div  key={index} id={index} className="ContactInfo" onClick={this.props.click}>
+              <ul>
               <li className="ContactName">{item.name.first} {item.name.last} </li>
               <li className="ContactPhone">{item.phone}</li>
               <li className="ContactEmail">{item.email}</li>
+              </ul>
             </div>)
           )}
           <ContactAdd />
