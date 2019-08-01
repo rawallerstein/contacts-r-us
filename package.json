@@ -2,7 +2,7 @@
   "name": "contacts-r-us",
   "version": "0.9.0",
   "private": true,
-  "homepage": "https://rawallerstein.github.io/Contacts-R-Us",
+  "homepage": "https://rawallerstein.github.io/contacts-r-us",
   "dependencies": {
     "bootstrap": "^4.3.1",
     "gh-pages": "^2.0.1",
