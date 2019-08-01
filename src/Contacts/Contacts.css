@@ -8,6 +8,23 @@
   overflow-wrap: break-word;
   overflow-y: scroll;
 }
+
+h2 {
+    padding-left: 3vw;
+    padding-top: 3vw;
+}
+.ContactPageName{
+  font-size: 5vw;
+  font-weight: 600;
+}
+.ContactPagePhone{
+  font-size: 4vw;
+}
+.ContactPageEmail{
+  font-size: 4vw;
+}
+
+
 .Contact {
   background: #78C186;
   flex: 1;

@@ -9,6 +9,14 @@ class ContactAdd extends React.Component {
     this.state = { show: false }
   }
 
+componentDidMount() {
+if (localStorage.getItem('items') === null) {
+  this.setState({
+    show: true,
+  });
+}
+}
+
   handleClose = () => {
     this.setState({
       show: false
@@ -52,23 +60,23 @@ class ContactAdd extends React.Component {
           <Modal.Body>
           <div className="form-group">
             <label for="AddFirstName">First Name</label>
-            <input type="text" className="form-control"/>
+            <input type="text" className="form-control" placeholder="John"/>
           </div>
           <div className="form-group">
             <label for="AddLastName">Last Name</label>
-            <input type="text" className="form-control"/>
+            <input type="text" className="form-control" placeholder="Doe"/>
           </div>
           <div>
             <label for="AddPhone">Phone Number</label>
-            <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" className="form-control"/>
+            <input type="tel" className="form-control" placeholder="(555)-555-5555"/>
           </div>
           <div>
             <label for="AddEmail">Email</label>
-            <input type="email" className="form-control"/>
+            <input type="email" className="form-control" placeholder="john.doe@gmail.com"/>
           </div>
           <div>
             <label for="AddDesc">Description</label>
-          <textarea className="form-control"/>
+          <textarea className="form-control" placeholder="He's a pretty good fella!"/>
           </div>
           </Modal.Body>
         <Modal.Footer>

@@ -20,6 +20,14 @@ class App extends Component {
 
 
   componentDidMount() {
+    if (this.state.items !== null) {
+      this.setState({
+        name: `${this.state.items[0].name.first} ${this.state.items[0].name.last}`,
+        phone: this.state.items[0].phone,
+        email: this.state.items[0].email,
+        desc: this.state.items[0].desc,
+      });
+    }
 
     fetch('https://randomuser.me/api/?results=100')
       .then(res => res.json())
@@ -46,6 +54,7 @@ class App extends Component {
           item: []
         })
       }
+
   }
 
 
