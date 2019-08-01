@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/Contacts-R-Us/static/css/main.68d00f39.chunk.css",
-    "main.js": "/Contacts-R-Us/static/js/main.a349a419.chunk.js",
-    "main.js.map": "/Contacts-R-Us/static/js/main.a349a419.chunk.js.map",
-    "runtime~main.js": "/Contacts-R-Us/static/js/runtime~main.3902e601.js",
-    "runtime~main.js.map": "/Contacts-R-Us/static/js/runtime~main.3902e601.js.map",
-    "static/css/2.22a7d4ef.chunk.css": "/Contacts-R-Us/static/css/2.22a7d4ef.chunk.css",
-    "static/js/2.400a4696.chunk.js": "/Contacts-R-Us/static/js/2.400a4696.chunk.js",
-    "static/js/2.400a4696.chunk.js.map": "/Contacts-R-Us/static/js/2.400a4696.chunk.js.map",
-    "index.html": "/Contacts-R-Us/index.html",
-    "precache-manifest.ff3c5033b4171d6758dc2c6ce57c9f8d.js": "/Contacts-R-Us/precache-manifest.ff3c5033b4171d6758dc2c6ce57c9f8d.js",
-    "service-worker.js": "/Contacts-R-Us/service-worker.js",
-    "static/css/2.22a7d4ef.chunk.css.map": "/Contacts-R-Us/static/css/2.22a7d4ef.chunk.css.map",
-    "static/css/main.68d00f39.chunk.css.map": "/Contacts-R-Us/static/css/main.68d00f39.chunk.css.map"
+    "main.css": "/contacts-r-us/static/css/main.68d00f39.chunk.css",
+    "main.js": "/contacts-r-us/static/js/main.90a21abd.chunk.js",
+    "main.js.map": "/contacts-r-us/static/js/main.90a21abd.chunk.js.map",
+    "runtime~main.js": "/contacts-r-us/static/js/runtime~main.becd196a.js",
+    "runtime~main.js.map": "/contacts-r-us/static/js/runtime~main.becd196a.js.map",
+    "static/css/2.22a7d4ef.chunk.css": "/contacts-r-us/static/css/2.22a7d4ef.chunk.css",
+    "static/js/2.400a4696.chunk.js": "/contacts-r-us/static/js/2.400a4696.chunk.js",
+    "static/js/2.400a4696.chunk.js.map": "/contacts-r-us/static/js/2.400a4696.chunk.js.map",
+    "index.html": "/contacts-r-us/index.html",
+    "precache-manifest.c1670fe46786702f59ad4f4f1dd0d9ff.js": "/contacts-r-us/precache-manifest.c1670fe46786702f59ad4f4f1dd0d9ff.js",
+    "service-worker.js": "/contacts-r-us/service-worker.js",
+    "static/css/2.22a7d4ef.chunk.css.map": "/contacts-r-us/static/css/2.22a7d4ef.chunk.css.map",
+    "static/css/main.68d00f39.chunk.css.map": "/contacts-r-us/static/css/main.68d00f39.chunk.css.map"
   }
 }
