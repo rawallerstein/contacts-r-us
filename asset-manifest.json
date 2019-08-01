@@ -1,0 +1,17 @@
+{
+  "files": {
+    "main.css": "/rawallerstein/Contacts-R-Us-Deploy/static/css/main.68d00f39.chunk.css",
+    "main.js": "/rawallerstein/Contacts-R-Us-Deploy/static/js/main.4f96f816.chunk.js",
+    "main.js.map": "/rawallerstein/Contacts-R-Us-Deploy/static/js/main.4f96f816.chunk.js.map",
+    "runtime~main.js": "/rawallerstein/Contacts-R-Us-Deploy/static/js/runtime~main.8b0e7623.js",
+    "runtime~main.js.map": "/rawallerstein/Contacts-R-Us-Deploy/static/js/runtime~main.8b0e7623.js.map",
+    "static/css/2.22a7d4ef.chunk.css": "/rawallerstein/Contacts-R-Us-Deploy/static/css/2.22a7d4ef.chunk.css",
+    "static/js/2.400a4696.chunk.js": "/rawallerstein/Contacts-R-Us-Deploy/static/js/2.400a4696.chunk.js",
+    "static/js/2.400a4696.chunk.js.map": "/rawallerstein/Contacts-R-Us-Deploy/static/js/2.400a4696.chunk.js.map",
+    "index.html": "/rawallerstein/Contacts-R-Us-Deploy/index.html",
+    "precache-manifest.fc4690e80f8dfdc0160ff6fb83439e82.js": "/rawallerstein/Contacts-R-Us-Deploy/precache-manifest.fc4690e80f8dfdc0160ff6fb83439e82.js",
+    "service-worker.js": "/rawallerstein/Contacts-R-Us-Deploy/service-worker.js",
+    "static/css/2.22a7d4ef.chunk.css.map": "/rawallerstein/Contacts-R-Us-Deploy/static/css/2.22a7d4ef.chunk.css.map",
+    "static/css/main.68d00f39.chunk.css.map": "/rawallerstein/Contacts-R-Us-Deploy/static/css/main.68d00f39.chunk.css.map"
+  }
+}
