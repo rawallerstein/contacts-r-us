@@ -60,7 +60,7 @@ class ContactAdd extends React.Component {
           </div>
           <div>
             <label for="AddPhone">Phone Number</label>
-            <input type="tel" className="form-control"/>
+            <input type="tel" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" className="form-control"/>
           </div>
           <div>
             <label for="AddEmail">Email</label>

@@ -58,23 +58,23 @@ class ContactEdit extends React.Component {
           <Modal.Body>
           <div className="form-group">
             <label for="AddFirstName" >First Name</label>
-            <input type="text" className="form-control" value={this.state.items[this.state.index].name.first} />
+            <input type="text" className="form-control"  defaultValue={this.state.items[this.state.index].name.first} />
           </div>
           <div className="form-group">
             <label for="AddLastName">Last Name</label>
-            <input type="text" className="form-control" value={this.state.items[this.state.index].name.last} />
+            <input type="text" className="form-control" defaultValue={this.state.items[this.state.index].name.last} />
           </div>
           <div>
             <label for="AddPhone">Phone Number</label>
-            <input type="tel" className="form-control"  value={this.state.items[this.state.index].phone}/>
+            <input type="tel" className="form-control"  defaultValue={this.state.items[this.state.index].phone}/>
           </div>
           <div>
             <label for="AddEmail">Email</label>
-            <input type="email" className="form-control" value={this.state.items[this.state.index].email} />
+            <input type="email" className="form-control" defaultValue={this.state.items[this.state.index].email} />
           </div>
           <div>
             <label for="AddDesc">Description</label>
-          <textarea className="form-control" value={this.state.items[this.state.index].desc}/>
+          <textarea className="form-control" defaultValue={this.state.items[this.state.index].desc}/>
           </div>
           </Modal.Body>
         <Modal.Footer>
