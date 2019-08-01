@@ -8,7 +8,7 @@ class App extends Component {
 
 
   state = {
-    name: 'Select or add contacts to begin',
+    name: 'Add contacts to begin',
     phone: '',
     email: '',
     desc: '',
