@@ -4,8 +4,8 @@ const Contacts = {
       "gender": "male",
       "name": {
         "title": "mr",
-        "first": "rolf",
-        "last": "hegdal"
+        "first": "Contact",
+        "last": "example"
       },
       "location": {
         "street": "ljan terrasse 346",

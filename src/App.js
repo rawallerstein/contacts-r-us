@@ -1,15 +1,27 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import './App.css';
 import ContactPage from './Contacts/ContactPage';
 import RandomUser from './Contacts/RandomUser';
-import Contacts from './Contacts/Contacts.js';
 
 
 class App extends Component {
 
+
+  state = {
+    name: '',
+    phone: '',
+    email: 'Select Contact',
+    desc: '',
+    checked: false,
+    items: JSON.parse(localStorage.getItem('items')),
+    item: JSON.parse(localStorage.getItem('items'))
+  }
+
+
+
   componentDidMount() {
 
-    fetch("https://randomuser.me/api/?results=100")
+    fetch('https://randomuser.me/api/?results=100')
       .then(res => res.json())
       .then(
         (result) => {
@@ -28,81 +40,74 @@ class App extends Component {
           });
         }
       )
+      if (this.state.items === null) {
+        this.setState({
+          items: [],
+          item: []
+        })
+      }
+  }
 
-  }
-  state = {
-    image: null,
-    name: '',
-    phone: '',
-    email: 'Select Contact',
-    desc: '',
-    checked: false,
-    items: Contacts.results.sort((a, b) => a.name.first.localeCompare(b.name.first))
-  }
 
   clickHandler = (event) => {
-    console.log(event.currentTarget.attributes.id.value)
     this.setState({
-                   name: this.state.items[event.currentTarget.attributes.id.value].name.first + ' ' + this.state.items[event.currentTarget.attributes.id.value].name.last,
-                   phone: this.state.items[event.currentTarget.attributes.id.value].phone,
-                   email: this.state.items[event.currentTarget.attributes.id.value].email,
-                   index: event.currentTarget.attributes.id.value
-                 })
+      name: `${this.state.items[event.currentTarget.attributes.id.value].name.first} ${this.state.items[event.currentTarget.attributes.id.value].name.last}`,
+      phone: this.state.items[event.currentTarget.attributes.id.value].phone,
+      email: this.state.items[event.currentTarget.attributes.id.value].email,
+      desc: this.state.items[event.currentTarget.attributes.id.value].desc,
+      index: event.currentTarget.attributes.id.value
+    })
   }
-  savehandler = (event) => {
-    if (this.state.checked === true) {
-      return(
-        <div></div>
-      );
-    } else {
-
-    }
-  }
-
-
 
   handleCheckboxChange = () => {
     this.setState({
-        checked: !this.state.checked,
+      checked: !this.state.checked,
     })
-    if (this.state.checked === true) {
+    if (this.state.checked === false) {
       this.setState({
-        items: Contacts.results.sort((a, b) => a.name.first.localeCompare(b.name.first))
+        items: this.state.results
       })
     } else {
       this.setState({
-      items: this.state.results})
+        items: this.state.item})
     }
   }
 
+
+
   render() {
   return (
-          <div className="App">
+    <div className="App">
 
-            <header className="App-header">
-              Contacts 'R' Us
-            </header>
-                <div className="wrapper">
-                  <div className="Contact">
-                  <RandomUser error={this.state.error} isLoaded={this.state.isLoaded} items={this.state.items}  click={this.clickHandler}/>
-                          {/*{this.contactState.data.map((d, i) =>
-                      <div  key={i} id={i} className="Cinfo" onClick={this.clickHandler}>
-                      {/*  // <li className="Cname">{d.name.first} </li>
-                        // <li className="Cphone">{d.phone}</li>
-                        // <li className="Cemail">{d.email}</li>
-                      </div>)}*/}
+      <header className="App-header">
+          Contacts 'R' Us
+      </header>
+      <div className="wrapper">
+        <div className="Contact">
+          <RandomUser
+            error={this.state.error}
+            isLoaded={this.state.isLoaded}
+            items={this.state.items}
+            click={this.clickHandler}
+          />
 
-                  </div>
+        </div>
 
-                <div>
-              <ContactPage className="ContactPage" name={this.state.name} phone={this.state.phone} email={this.state.email} savehandler={this.savehandler}/>
-              <input type="checkbox" id="democheck" checked={this.state.checked} onChange={this.handleCheckboxChange} text="lmao"/>
-              <label for="democheck">Demo Mode</label>
-            </div>
+        <div>
+          <ContactPage
+          className="ContactPage"
+            name={this.state.name}
+            phone={this.state.phone}
+            email={this.state.email}
+            desc={this.state.desc}
+          />
+          <input type="checkbox" id="democheck" checked={this.state.checked} onChange={this.handleCheckboxChange} />
+          <label htmlFor="democheck">Demo Mode</label>
+        </div>
       </div>
 
     </div>
-  );
+    );
 }
 }
 

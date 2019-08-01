@@ -1,4 +1,5 @@
 import React from 'react';
+import ContactAdd from './ContactAdd';
 
 
 class RandomUser extends React.Component {
@@ -8,35 +9,48 @@ class RandomUser extends React.Component {
       error: null,
       isLoaded: false,
       items: [],
-      cid: 0
+      cid: 0,
+      show: false,
     };
   }
-  // componentDidMount() {
-  //   fetch("https://randomuser.me/api/?results=5")
-  //     .then(res => res.json())
-  //     .then(
-  //       (result) => {
-  //         this.setState({
-  //           isLoaded: true,
-  //           items: result.results
-  //         });
-  //       },
-  //       // Note: it's important to handle errors here
-  //       // instead of a catch() block so that we don't swallow
-  //       // exceptions from actual bugs in components.
-  //       (error) => {
-  //         this.setState({
-  //           isLoaded: true,
-  //           error
-  //         });
-  //       }
-  //     )
-  // }
+
+handleClose = () => {
+  this.setState({
+    show: false
+  })
+}
+
+handleShow = () => {
+  this.setState({
+    show: true
+  })
+}
+
+handleSave = (event) => {
+  if (localStorage.getItem('items') === null) {
+    localStorage.setItem('items', '[]')
+  }
+  const dat = JSON.parse(localStorage.getItem('items'));
+  dat.push({
+    name: {
+      first: event.target[0].value,
+      last: event.target[1].value},
+    phone: event.target[2].value,
+    email: event.target[3].value,
+    desc: event.target[4].value,
+  });
+  localStorage.setItem('items', JSON.stringify(dat))
+}
+
 
   render() {
     const { error, isLoaded, items } = this.props;
     if (error) {
-      return <div>Error: {error.message}</div>;
+      return (
+        <div>
+      Error: {error.message}
+      </div>
+);
     } else if (!isLoaded) {
       return <div>Loading...</div>;
     } else {
@@ -44,12 +58,13 @@ class RandomUser extends React.Component {
         console.log(items),
         <div>
           {items.map((item, index) => (
-            <div  key={index} id={index} className="Cinfo" onClick={this.props.click}>
-              <li className="Cname">{item.name.first} {item.name.last} </li>
-              <li className="Cphone">{item.phone}</li>
-              <li className="Cemail">{item.email}</li>
+            <div  key={index} id={index} className="ContactInfo" onClick={this.props.click}>
+              <li className="ContactName">{item.name.first} {item.name.last} </li>
+              <li className="ContactPhone">{item.phone}</li>
+              <li className="ContactEmail">{item.email}</li>
             </div>)
           )}
+          <ContactAdd handleClose={this.handleClose} handleShow={this.handleShow} show={this.state.show} handleSave={this.handleSave}/>
         </div>
       );
     }
