@@ -5,11 +5,11 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: 70vh;
+  height: 100vh;
 }
 
 .App {
-  height: 72vh;
+  height: 100vh;
   width: 100vw;
 }
 
@@ -17,13 +17,12 @@ body {
   display: flex;
 }
 
-.App-header {
-  height: 30px;
+.App-Header {
+  height: 5vh;
   display: flex;
-  text-align: left;
-  vertical-align: ;
+  font-size: 3vh;
+  text-align: center;
   padding-left: 10vw;
-  padding-top: 2.7vh;
-  padding-bottom: 4.3vh;
+  padding-top: 0;
     background: #4EFFEF;
 }
