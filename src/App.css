@@ -5,12 +5,12 @@ body {
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  height: 80vh;
+  height: 70vh;
 }
 
 .App {
-  height: 80vh;
-  width: 99vw;
+  height: 72vh;
+  width: 100vw;
 }
 
 .wrapper {
@@ -21,8 +21,9 @@ body {
   height: 30px;
   display: flex;
   text-align: left;
-  padding-left: 1vw;
-  padding-top: 1vh;
-  padding-bottom: 4vh;
+  vertical-align: ;
+  padding-left: 10vw;
+  padding-top: 2.7vh;
+  padding-bottom: 4.3vh;
     background: #4EFFEF;
 }

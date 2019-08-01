@@ -2,8 +2,8 @@
   flex: 1;
   display: flex;
   flex-direction: column;
-  width: 60vw;
-  height: 95vh;
+  width: 70vw;
+  height: 94vh;
   background: #EAE8FF;
   overflow-wrap: break-word;
   overflow-y: scroll;
@@ -12,46 +12,41 @@
   background: #78C186;
   flex: 1;
   color: #000000;
-  height: 95vh;
+  height: 94vh;
   overflow-y: auto;
   overflow-x: hidden;
-  list-style: none;
 }
 
 .ContactInfo {
   border-top:solid 2px #FFCAD4;
   border-bottom:solid 2px #FFCAD4;
   background: #78C186;
-  height: 100px;
-  padding: 8px;
+  height: 10vh;
+  padding-left: 1vw;
   cursor: pointer;
   overflow-y: hidden;
 } .ContactInfo:hover{
   background-color: #588D62;}
 
+ul {list-style: none;
+    padding-left: 0;}
+
  .ContactName {
-   display:flex;
-   font-size: medium;
-   margin-left: 10px;
+   font-size: 2vh;
    white-space: nowrap;
    overflow: hidden;
    text-overflow: ellipsis;
-   margin-top: 0;
-   margin-bottom: 0;
  }
 
  .ContactPhone {
-   display: small;
-   font-size: 10pt;
-   margin-left: 10px;
+   font-size: 2vh;
    white-space: nowrap;
    overflow: hidden;
    text-overflow: ellipsis;
  }
 
  .ContactEmail {
-   font-size: small;
-   margin-left: 10px;
+   font-size: 2vh;
    white-space: nowrap;
    overflow: hidden;
    text-overflow: ellipsis;

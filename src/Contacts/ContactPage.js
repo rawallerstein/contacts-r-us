@@ -26,11 +26,11 @@ class Cpage extends React.Component {
   return (
     <div className="ContactPageContact">
       <div>
-        <h2 className="display-4" contentEditable="true">{this.props.name}</h2>
-        <h2 className="ContactPagePhone" contentEditable="true">{this.props.phone}</h2>
-        <h2 className="ContactPageEmail" contentEditable="true">{this.props.email}</h2>
+        <h2 className="display-4">{this.props.name}</h2>
+        <h2 className="ContactPagePhone">{this.props.phone}</h2>
+        <h2 className="ContactPageEmail">{this.props.email}</h2>
         <br />
-        <h2 className="lead" contentEditable="true">{this.props.desc}</h2>
+        <h2 className="lead">{this.props.desc}</h2>
       </div>
       <ContactEdit items={this.props.items} index={this.state.index} />
       <ContactDelete items={this.props.items} index={this.state.index}/>
