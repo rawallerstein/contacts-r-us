@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/Contacts-R-Us-Deploy/static/css/main.68d00f39.chunk.css",
-    "main.js": "/Contacts-R-Us-Deploy/static/js/main.10ad7738.chunk.js",
-    "main.js.map": "/Contacts-R-Us-Deploy/static/js/main.10ad7738.chunk.js.map",
-    "runtime~main.js": "/Contacts-R-Us-Deploy/static/js/runtime~main.e33a6170.js",
-    "runtime~main.js.map": "/Contacts-R-Us-Deploy/static/js/runtime~main.e33a6170.js.map",
-    "static/css/2.22a7d4ef.chunk.css": "/Contacts-R-Us-Deploy/static/css/2.22a7d4ef.chunk.css",
-    "static/js/2.400a4696.chunk.js": "/Contacts-R-Us-Deploy/static/js/2.400a4696.chunk.js",
-    "static/js/2.400a4696.chunk.js.map": "/Contacts-R-Us-Deploy/static/js/2.400a4696.chunk.js.map",
-    "index.html": "/Contacts-R-Us-Deploy/index.html",
-    "precache-manifest.1d4a5fb9ae9927e7ca9a920b521c898c.js": "/Contacts-R-Us-Deploy/precache-manifest.1d4a5fb9ae9927e7ca9a920b521c898c.js",
-    "service-worker.js": "/Contacts-R-Us-Deploy/service-worker.js",
-    "static/css/2.22a7d4ef.chunk.css.map": "/Contacts-R-Us-Deploy/static/css/2.22a7d4ef.chunk.css.map",
-    "static/css/main.68d00f39.chunk.css.map": "/Contacts-R-Us-Deploy/static/css/main.68d00f39.chunk.css.map"
+    "main.css": "/Contacts-R-Us/static/css/main.68d00f39.chunk.css",
+    "main.js": "/Contacts-R-Us/static/js/main.a349a419.chunk.js",
+    "main.js.map": "/Contacts-R-Us/static/js/main.a349a419.chunk.js.map",
+    "runtime~main.js": "/Contacts-R-Us/static/js/runtime~main.3902e601.js",
+    "runtime~main.js.map": "/Contacts-R-Us/static/js/runtime~main.3902e601.js.map",
+    "static/css/2.22a7d4ef.chunk.css": "/Contacts-R-Us/static/css/2.22a7d4ef.chunk.css",
+    "static/js/2.400a4696.chunk.js": "/Contacts-R-Us/static/js/2.400a4696.chunk.js",
+    "static/js/2.400a4696.chunk.js.map": "/Contacts-R-Us/static/js/2.400a4696.chunk.js.map",
+    "index.html": "/Contacts-R-Us/index.html",
+    "precache-manifest.ff3c5033b4171d6758dc2c6ce57c9f8d.js": "/Contacts-R-Us/precache-manifest.ff3c5033b4171d6758dc2c6ce57c9f8d.js",
+    "service-worker.js": "/Contacts-R-Us/service-worker.js",
+    "static/css/2.22a7d4ef.chunk.css.map": "/Contacts-R-Us/static/css/2.22a7d4ef.chunk.css.map",
+    "static/css/main.68d00f39.chunk.css.map": "/Contacts-R-Us/static/css/main.68d00f39.chunk.css.map"
   }
 }
