@@ -2,7 +2,8 @@ import React from 'react';
 import './Contacts.css';
 import ContactDelete from './ContactDelete';
 import ContactEdit from './ContactEdit';
-
+import 'bootstrap/dist/css/bootstrap.css';
+import './ContactAdd.css';
 
 
 class Cpage extends React.Component {
@@ -25,10 +26,11 @@ class Cpage extends React.Component {
   return (
     <div className="ContactPageContact">
       <div>
-        <p className="ContactPageName" contentEditable="true">{this.props.name}</p>
-        <p className="ContactPagePhone" contentEditable="true">{this.props.phone}</p>
-        <p className="ContactPageEmail" contentEditable="true">{this.props.email}</p>
-        <p className="ContactPageDescription" contentEditable="true">{this.props.desc}</p>
+        <h2 className="display-4" contentEditable="true">{this.props.name}</h2>
+        <h2 className="ContactPagePhone" contentEditable="true">{this.props.phone}</h2>
+        <h2 className="ContactPageEmail" contentEditable="true">{this.props.email}</h2>
+        <br />
+        <h2 className="lead" contentEditable="true">{this.props.desc}</h2>
       </div>
       <ContactEdit items={this.props.items} index={this.state.index} />
       <ContactDelete items={this.props.items} index={this.state.index}/>

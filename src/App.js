@@ -103,8 +103,6 @@ class App extends Component {
             items={this.state.items}
             index={this.state.index}
           />
-          <input type="checkbox" id="democheck" checked={this.state.checked} onChange={this.handleCheckboxChange} />
-          <label htmlFor="democheck">Demo Mode</label>
         </div>
       </div>
 
