@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/contacts-r-us/static/css/main.9bb140f3.chunk.css",
+    "main.css": "/contacts-r-us/static/css/main.7cb7fcd8.chunk.css",
     "main.js": "/contacts-r-us/static/js/main.5ad8e04a.chunk.js",
     "main.js.map": "/contacts-r-us/static/js/main.5ad8e04a.chunk.js.map",
     "runtime~main.js": "/contacts-r-us/static/js/runtime~main.becd196a.js",
@@ -9,9 +9,9 @@
     "static/js/2.400a4696.chunk.js": "/contacts-r-us/static/js/2.400a4696.chunk.js",
     "static/js/2.400a4696.chunk.js.map": "/contacts-r-us/static/js/2.400a4696.chunk.js.map",
     "index.html": "/contacts-r-us/index.html",
-    "precache-manifest.dd7626abc5c1fc1b15ce3abc1932587e.js": "/contacts-r-us/precache-manifest.dd7626abc5c1fc1b15ce3abc1932587e.js",
+    "precache-manifest.18eb882ffb003223f628e17ceace0968.js": "/contacts-r-us/precache-manifest.18eb882ffb003223f628e17ceace0968.js",
     "service-worker.js": "/contacts-r-us/service-worker.js",
     "static/css/2.22a7d4ef.chunk.css.map": "/contacts-r-us/static/css/2.22a7d4ef.chunk.css.map",
-    "static/css/main.9bb140f3.chunk.css.map": "/contacts-r-us/static/css/main.9bb140f3.chunk.css.map"
+    "static/css/main.7cb7fcd8.chunk.css.map": "/contacts-r-us/static/css/main.7cb7fcd8.chunk.css.map"
   }
 }
