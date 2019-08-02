@@ -15,6 +15,7 @@ class App extends Component {
     checked: false,
     items: JSON.parse(localStorage.getItem('items')),
     item: JSON.parse(localStorage.getItem('items')),
+    index: 0
   }
 
 

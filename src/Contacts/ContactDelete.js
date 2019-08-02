@@ -40,7 +40,7 @@ static getDerivedStateFromProps(newProps, oldState) {
 }
 
   render () {
-    if (this.state.items[this.state.index]) {
+    if (this.state.items[this.state.index] !== undefined) {
   return (
     <>
       <Button variant="danger" onClick={this.handleShow}>

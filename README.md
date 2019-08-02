@@ -2,9 +2,9 @@ This project was bootstrapped with [Create React App](https://github.com/faceboo
 
 TODO: Make the damn thing less ugly.
 
-TODO: Specifically, need to add css to ContactPage element.
+TODO: Re-add demo mode as keydown.
 
-TODO: Change the demo checkbox to a keybind to clean up the UI. 
+TODO: Do something with all the whitespace.
 
 
 ## Available Scripts

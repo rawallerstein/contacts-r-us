@@ -43,7 +43,7 @@ class ContactEdit extends React.Component {
     localStorage.setItem('items', JSON.stringify(dat));}
 
   render() {
-    if (this.state.items[this.state.index]) {
+    if (this.state.items[this.state.index] !== undefined) {
   return (
     <>
       <Button variant="primary" onClick={this.handleShow}>
@@ -86,9 +86,8 @@ class ContactEdit extends React.Component {
         </form>
       </Modal>
     </>
-  );} else {
-    return null
-  }}
+      );}
+      return null;
+  }
 }
-
 export default ContactEdit;
