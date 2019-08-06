@@ -49,15 +49,30 @@ class App extends Component {
           });
         }
       )
-      if (this.state.items === null) {
-        this.setState({
-          items: [],
-          item: []
-        })
-      }
-
+    if (this.state.items === null) {
+      this.setState({
+        items: [],
+        item: []
+      })
+    }
+    document.addEventListener('keydown', this.handleCheckboxChange);
   }
 
+  handleCheckboxChange = (event) => {
+    if (event.key === 'Escape') {
+      this.setState({
+        checked: !this.state.checked,
+      });
+    }
+    if (this.state.checked === false) {
+      this.setState({
+        items: this.state.results
+      })
+    } else {
+      this.setState({
+        items: this.state.item})
+    }
+}
 
   clickHandler = (event) => {
     this.setState({
@@ -70,19 +85,7 @@ class App extends Component {
     console.log(this.state.index);
   }
 
-  handleCheckboxChange = () => {
-    this.setState({
-      checked: !this.state.checked,
-    })
-    if (this.state.checked === false) {
-      this.setState({
-        items: this.state.results
-      })
-    } else {
-      this.setState({
-        items: this.state.item})
-    }
-  }
+
 
   render() {
   return (
