@@ -12,16 +12,16 @@ class App extends Component {
     phone: '',
     email: '',
     desc: '',
-    checked: false,
+    checked: true,
     items: JSON.parse(localStorage.getItem('items')),
     item: JSON.parse(localStorage.getItem('items')),
-    index: 0
+    index: 0,
   }
 
 
 
   componentDidMount() {
-    if (this.state.items !== null) {
+    if (!this.state.items) {
       this.setState({
         name: `${this.state.items[0].name.first} ${this.state.items[0].name.last}`,
         phone: this.state.items[0].phone,
@@ -112,7 +112,6 @@ class App extends Component {
             phone={this.state.phone}
             email={this.state.email}
             desc={this.state.desc}
-            handleDelete={this.handleDelete}
             items={this.state.items}
             index={this.state.index}
           />
