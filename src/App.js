@@ -22,7 +22,7 @@ class App extends Component {
 
 
   componentDidMount() {
-    if (this.state.items) {
+    if (this.state.items[0]) {
       this.setState({
         name: `${this.state.items[0].name.first} ${this.state.items[0].name.last}`,
         phone: this.state.items[0].phone,
@@ -31,7 +31,7 @@ class App extends Component {
       });
     }
 
-    if (this.state.items) {
+    if (this.state.items[0]) {
       this.setState({
         picture: this.state.items[0].picture.large,
       })

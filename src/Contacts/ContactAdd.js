@@ -10,7 +10,7 @@ class ContactAdd extends React.Component {
   }
 
 componentDidMount() {
-if (localStorage.getItem('items') === null) {
+if (localStorage.getItem('items') === '[]' ) {
   this.setState({
     show: true,
   });
@@ -40,9 +40,9 @@ if (localStorage.getItem('items') === null) {
         last: event.target[1].value},
       phone: event.target[2].value,
       email: event.target[3].value,
-      desc: event.target[4].value,
+      desc: event.target[5].value,
       picture: {
-        large: '',
+        large: event.target[4].value,
       }
     });
     localStorage.setItem('items', JSON.stringify(dat))
@@ -51,7 +51,7 @@ if (localStorage.getItem('items') === null) {
   render() {
   return (
     <>
-      <Button variant="secondary" onClick={this.handleShow}>
+      <Button variant="info" onClick={this.handleShow}>
         Add Contact
       </Button>
 
@@ -76,6 +76,10 @@ if (localStorage.getItem('items') === null) {
           <div>
             <label for="AddEmail">Email</label>
             <input type="email" className="form-control" placeholder="john.doe@gmail.com"/>
+          </div>
+          <div>
+            <label for="AddPicture">Image URL</label>
+            <input type="url" className="form-control" placeholder="https://website.com/image.jpg"/>
           </div>
           <div>
             <label for="AddDesc">Description</label>

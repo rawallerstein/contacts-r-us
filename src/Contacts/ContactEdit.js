@@ -39,7 +39,8 @@ class ContactEdit extends React.Component {
     dat[this.state.index].name.last = event.target[1].value;
     dat[this.state.index].phone = event.target[2].value;
     dat[this.state.index].email = event.target[3].value;
-    dat[this.state.index].desc = event.target[4].value;
+    dat[this.state.index].desc = event.target[5].value;
+    dat[this.state.index].picture.large = event.target[4].value;
     localStorage.setItem('items', JSON.stringify(dat));}
 
   render() {
@@ -71,6 +72,10 @@ class ContactEdit extends React.Component {
           <div>
             <label for="AddEmail">Email</label>
             <input type="email" className="form-control" defaultValue={this.state.items[this.state.index].email} />
+          </div>
+          <div>
+            <label for="AddPicture">Image URL</label>
+            <input type="url" className="form-control" defaultValue={this.state.items[this.state.index].picture.large}/>
           </div>
           <div>
             <label for="AddDesc">Description</label>
