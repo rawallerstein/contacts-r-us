@@ -1,9 +1,9 @@
 import React from 'react';
 
 class ContactPagePicture extends React.Component {
-  render(){
+  render() {
     if (this.props.picture) {
-      return <img src={this.props.picture} alt={"Portrait"} />
+      return <img style={{'max-height': '20vh'}} src={this.props.picture} alt={"Portrait"} />
     } else {
       return null;
     }

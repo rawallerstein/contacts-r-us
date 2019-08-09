@@ -27,15 +27,15 @@ class Cpage extends React.Component {
   return (
     <div className="ContactPageContact">
       <div>
-        <ContactPagePicture picture={this.props.picture} />
+        <div className="container responsive" style={{height: '20vh'}}><ContactPagePicture picture={this.props.picture} /></div>
         <h2 className="ContactPageName">{this.props.name}</h2>
         <h2 className="ContactPagePhone">{this.props.phone}</h2>
         <h2 className="ContactPageEmail">{this.props.email}</h2>
         <br />
         <h2 className="lead">{this.props.desc}</h2>
+        <a style={{position: 'absolute', bottom: '10px'}}> <ContactEdit items={this.props.items} index={this.state.index} />
+        <ContactDelete items={this.props.items} index={this.state.index}/> </a>
       </div>
-      <ContactEdit items={this.props.items} index={this.state.index} />
-      <ContactDelete items={this.props.items} index={this.state.index}/>
     </div>
 );} else {
   return <div></div>

@@ -206,6 +206,8 @@ figure {
 
 img {
   border-radius: 50%;
+  max-height: 40%;
+  max-width: 90%;
   display: flex;
   margin-top: 1vh;
   margin-left: auto;
@@ -2562,7 +2564,7 @@ textarea.form-control {
 }
 
 .btn {
-  display: inline-block;
+  display: inline-flex;
   font-weight: 400;
   color: #888;
   text-align: center;

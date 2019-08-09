@@ -51,9 +51,9 @@ if (localStorage.getItem('items') === '[]' ) {
   render() {
   return (
     <>
-      <Button variant="info" onClick={this.handleShow}>
+      <a style={{position: 'absolute', bottom: '10px', width: '29.5vw', 'justify-self': 'center'}}><Button variant="info" onClick={this.handleShow}>
         Add Contact
-      </Button>
+      </Button></a>
 
       <Modal show={this.state.show} onHide={this.handleClose}>
         <Modal.Header closeButton>
