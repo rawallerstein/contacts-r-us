@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './bootstrap.css';
 import './App.css';
 import ContactPage from './Contacts/ContactPage';
 import RandomUser from './Contacts/RandomUser';
@@ -21,13 +22,19 @@ class App extends Component {
 
 
   componentDidMount() {
-    if (!this.state.items) {
+    if (this.state.items) {
       this.setState({
         name: `${this.state.items[0].name.first} ${this.state.items[0].name.last}`,
         phone: this.state.items[0].phone,
         email: this.state.items[0].email,
         desc: this.state.items[0].desc,
       });
+    }
+
+    if (this.state.items) {
+      this.setState({
+        picture: this.state.items[0].picture.large,
+      })
     }
 
     fetch('https://randomuser.me/api/?results=100')
@@ -75,6 +82,11 @@ class App extends Component {
 }
 
   clickHandler = (event) => {
+    if (this.state.items[event.currentTarget.attributes.id.value].picture) {
+      this.setState({
+        picture: this.state.items[event.currentTarget.attributes.id.value].picture.large,
+      });
+    }
     this.setState({
       name: `${this.state.items[event.currentTarget.attributes.id.value].name.first} ${this.state.items[event.currentTarget.attributes.id.value].name.last}`,
       phone: this.state.items[event.currentTarget.attributes.id.value].phone,
@@ -83,6 +95,7 @@ class App extends Component {
       index: event.currentTarget.attributes.id.value,
     })
     console.log(this.state.index);
+    console.log(this.state.picture)
   }
 
 
@@ -91,8 +104,8 @@ class App extends Component {
   return (
     <div className="App">
 
-      <header className="App-Header">
-          Contacts 'R' Us
+      <header className="navbar navbar-expand-lg navbar-dark bg-dark">
+          <strong className="navbar-brand">Contacts 'R' Us</strong>
       </header>
       <div className="wrapper">
         <div className="Contact">
@@ -108,6 +121,7 @@ class App extends Component {
         <div>
           <ContactPage
           className="ContactPage"
+            picture={this.state.picture}
             name={this.state.name}
             phone={this.state.phone}
             email={this.state.email}

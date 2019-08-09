@@ -1,5 +1,6 @@
 import React from 'react';
 import ContactAdd from './ContactAdd';
+import '../bootstrap.css';
 
 
 class RandomUser extends React.Component {

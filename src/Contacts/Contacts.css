@@ -4,46 +4,44 @@
   flex-direction: column;
   width: 70vw;
   height: 95vh;
-  background: #EAE8FF;
   overflow-wrap: break-word;
-  overflow-y: scroll;
+  overflow-y: auto;
 }
 
 h2 {
     padding-left: 3vw;
-    padding-top: 3vw;
+    padding-top: 1vw;
 }
 .ContactPageName{
-  font-size: 5vw;
+  font-size: 4vw;
   font-weight: 600;
 }
 .ContactPagePhone{
-  font-size: 4vw;
+  font-size: 3vw;
 }
 .ContactPageEmail{
-  font-size: 4vw;
+  font-size: 3vw;
 }
 
 
 .Contact {
-  background: #78C186;
+  color:#ffffff;
+  background-color: #56cc9d;
   flex: 1;
-  color: #000000;
   height: 95vh;
   overflow-y: auto;
   overflow-x: hidden;
 }
 
 .ContactInfo {
-  border-top:solid 2px #FFCAD4;
-  border-bottom:solid 2px #FFCAD4;
-  background: #78C186;
+  border-bottom:solid 2px #90ddbf;
+  background: #56cc9d;
   height: 10vh;
   padding-left: 1vw;
   cursor: pointer;
   overflow-y: hidden;
 } .ContactInfo:hover{
-  background-color: #588D62;}
+  background-color: #78c2ad;}
 
 ul {list-style: none;
     padding-left: 0;}

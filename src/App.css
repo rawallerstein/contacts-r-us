@@ -17,12 +17,13 @@ body {
   display: flex;
 }
 
-.App-Header {
+.navbar{
   height: 5vh;
   display: flex;
   font-size: 3vh;
+  color: #ffffff;
   text-align: center;
   padding-left: 10vw;
-  padding-top: 0;
-    background: #4EFFEF;
+  padding-top: 1vh;
+  justify-content: center;
 }

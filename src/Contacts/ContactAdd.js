@@ -1,6 +1,6 @@
 import React from 'react';
 import { Modal, Button } from 'react-bootstrap';
-import 'bootstrap/dist/css/bootstrap.css';
+import '../bootstrap.css';
 import './ContactAdd.css';
 
 class ContactAdd extends React.Component {
@@ -41,6 +41,9 @@ if (localStorage.getItem('items') === null) {
       phone: event.target[2].value,
       email: event.target[3].value,
       desc: event.target[4].value,
+      picture: {
+        large: '',
+      }
     });
     localStorage.setItem('items', JSON.stringify(dat))
   }
@@ -48,7 +51,7 @@ if (localStorage.getItem('items') === null) {
   render() {
   return (
     <>
-      <Button variant="primary" onClick={this.handleShow}>
+      <Button variant="secondary" onClick={this.handleShow}>
         Add Contact
       </Button>
 
