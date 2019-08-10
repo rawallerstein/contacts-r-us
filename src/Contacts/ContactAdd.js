@@ -10,10 +10,10 @@ class ContactAdd extends React.Component {
   }
 
 componentDidMount() {
-if (localStorage.getItem('items') === '[]' ) {
-  this.setState({
-    show: true,
-  });
+if (localStorage.getItem('items') === '[]') {
+      this.setState({
+        show: true,
+      });
 }
 }
 
@@ -49,11 +49,13 @@ if (localStorage.getItem('items') === '[]' ) {
   }
 
   render() {
-  return (
+    return (
     <>
-      <a style={{position: 'absolute', bottom: '10px', width: '29.5vw', 'justify-self': 'center'}}><Button variant="info" onClick={this.handleShow}>
+      <a style={{width: '29.5vw', 'justify-self': 'center', 'padding-bottom': '10px'}}>
+<Button variant="info" className="ContactAdd" onClick={this.handleShow}>
         Add Contact
-      </Button></a>
+</Button>
+</a>
 
       <Modal show={this.state.show} onHide={this.handleClose}>
         <Modal.Header closeButton>
@@ -93,9 +95,10 @@ if (localStorage.getItem('items') === '[]' ) {
           <input className="btn btn-primary" type="submit" value="Save Contact" variant="primary" />
         </Modal.Footer>
         </form>
-      </Modal>
+    </Modal>
     </>
-  );}
+    );
+}
 }
 
 export default ContactAdd;

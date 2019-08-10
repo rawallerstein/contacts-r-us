@@ -22,7 +22,6 @@ class RandomUser extends React.Component {
       return <div>Loading...</div>;
     } else {
       return (
-        console.log(items),
         <div>
           {items.map((item, index) => (
             <div  key={index} id={index} className="ContactInfo" onClick={this.props.click}>
@@ -35,6 +34,7 @@ class RandomUser extends React.Component {
           )}
           <ContactAdd />
         </div>
+
       );
     }
   }

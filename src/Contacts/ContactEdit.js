@@ -45,8 +45,8 @@ class ContactEdit extends React.Component {
 
   render() {
     if (this.state.items[this.state.index] !== undefined) {
-  return (
-    <>
+      return (
+        <>
       <Button variant="primary" onClick={this.handleShow}>
         Edit Contact
       </Button>
@@ -91,8 +91,9 @@ class ContactEdit extends React.Component {
         </form>
       </Modal>
     </>
-      );}
-      return null;
+      );
+    }
+    return null;
   }
 }
 export default ContactEdit;

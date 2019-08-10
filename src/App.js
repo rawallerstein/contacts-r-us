@@ -115,7 +115,6 @@ class App extends Component {
             items={this.state.items}
             click={this.clickHandler}
           />
-
         </div>
 
         <div>

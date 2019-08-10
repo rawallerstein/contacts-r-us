@@ -12,41 +12,40 @@ class ContactDelete extends React.Component {
     }
   }
 
-  handleClose = () => {
-  this.setState({
+static getDerivedStateFromProps(newProps, oldState) {
+    if (newProps.index === oldState.index) {
+      return null;
+    }
+    return {
+      index: newProps.index,
+    };
+}
+
+handleClose = () => {
+this.setState({
     show: false
-  })
+})
 }
 
 handleShow = () => {
-  this.setState({
+this.setState({
     show: true
-  })
+})
 }
 
 handleDelete = () => {
-  const dat = JSON.parse(localStorage.getItem('items'));
-  dat.splice(this.state.index, 1);
-  localStorage.setItem('items', JSON.stringify(dat))
+const dat = JSON.parse(localStorage.getItem('items'));
+dat.splice(this.state.index, 1);
+localStorage.setItem('items', JSON.stringify(dat))
 }
 
-static getDerivedStateFromProps(newProps, oldState) {
-  if (newProps.index === oldState.index) {
-    return null;
-  }
-  return {
-    index: newProps.index,
-  };
-}
-
-  render () {
-    if (this.state.items[this.state.index] !== undefined) {
-  return (
-    <>
+render() {
+  if (this.state.items[this.state.index] !== undefined) {
+    return (
+      <>
       <Button variant="danger" onClick={this.handleShow}>
         Delete Contact
       </Button>
-
       <Modal show={this.state.show} onHide={this.handleClose}>
         <Modal.Header closeButton>
           <Modal.Title>Confirm Contact Deletion</Modal.Title>
@@ -64,7 +63,8 @@ static getDerivedStateFromProps(newProps, oldState) {
         </form>
       </Modal>
     </>
-  );}
+    );
+  }
   return null;
 }
 }

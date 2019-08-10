@@ -24,7 +24,7 @@ class Cpage extends React.Component {
 
   render() {
     if (this.props.items) {
-  return (
+      return (
     <div className="ContactPageContact">
       <div>
         <div className="container responsive" style={{height: '20vh'}}><ContactPagePicture picture={this.props.picture} /></div>
@@ -37,9 +37,11 @@ class Cpage extends React.Component {
         <ContactDelete items={this.props.items} index={this.state.index}/> </a>
       </div>
     </div>
-);} else {
-  return <div></div>
-}}
-};
+);
+} else {
+  return <div />
+}
+}
+}
 
 export default Cpage;
