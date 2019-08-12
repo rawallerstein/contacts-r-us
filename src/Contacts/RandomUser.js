@@ -20,6 +20,8 @@ class RandomUser extends React.Component {
       );
     } else if (!isLoaded) {
       return <div>Loading...</div>;
+    } else if (items === null) {
+      return null
     } else {
       return (
         <div>

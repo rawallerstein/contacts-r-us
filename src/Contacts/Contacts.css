@@ -2,16 +2,17 @@
   flex: 1;
   flex-direction: row;
   width: 70vw;
-  height: 95vh;
+  height: 85vh;
   overflow-wrap: break-word;
   overflow-y: auto;
 }
 
 h2 {
     padding-left: 3vw;
-    padding-top: 1vw;
+    padding-top: 1vh;
 }
 .ContactPageName{
+  padding-top: 10vh;
   font-size: 4vw;
   font-weight: 600;
 }
@@ -22,12 +23,17 @@ h2 {
   font-size: 3vw;
 }
 
+.ContactPageDescription {
+  padding-left: 3vw;
+  padding-top: 1vh;
+}
+
 
 .Contact {
   color:#ffffff;
   background-color: #56cc9d;
-  flex: 1;
   height: 95vh;
+  width: 30vw;
   overflow-y: auto;
   overflow-x: hidden;
 }

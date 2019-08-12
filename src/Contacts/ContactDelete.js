@@ -47,7 +47,7 @@ render() {
     return (
       <>
       <Button variant="danger" onClick={this.handleShow}>
-        Delete Contact
+        Delete
       </Button>
       <Modal show={this.state.show} onHide={this.handleClose}>
         <Modal.Header closeButton>

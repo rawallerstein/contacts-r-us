@@ -51,7 +51,7 @@ class ContactEdit extends React.Component {
       return (
         <>
       <Button variant="primary" onClick={this.handleShow}>
-        Edit Contact
+        Edit
       </Button>
 
       <Modal show={this.state.show} onHide={this.handleClose}>

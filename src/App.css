@@ -20,10 +20,14 @@ body {
 .navbar{
   height: 5vh;
   display: flex;
-  font-size: 3vh;
   color: #ffffff;
   text-align: center;
   padding-left: 10vw;
-  padding-top: 1vh;
+  padding-bottom: 0vh;
+  padding-top: 0vh;
   justify-content: center;
+}
+
+.navbar-brand {
+  font-size: 2.6vh;
 }
