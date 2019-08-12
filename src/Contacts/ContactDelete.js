@@ -2,6 +2,7 @@ import React from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import '../bootstrap.css';
 
+// Component for Delete Contact button and modal.
 class ContactDelete extends React.Component {
   constructor(props) {
     super(props);
@@ -11,7 +12,8 @@ class ContactDelete extends React.Component {
       items: props.items,
     }
   }
-
+// Checks for props updates to avoid accidently deleting a previous contact.
+// Not a common bug, but was an issue in the past.
 static getDerivedStateFromProps(newProps, oldState) {
     if (newProps.index === oldState.index) {
       return null;
@@ -40,6 +42,7 @@ localStorage.setItem('items', JSON.stringify(dat))
 }
 
 render() {
+  // Button only appears if there is a contact to delete.
   if (this.state.items[this.state.index] !== undefined) {
     return (
       <>

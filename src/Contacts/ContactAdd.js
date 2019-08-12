@@ -3,6 +3,8 @@ import { Modal, Button } from 'react-bootstrap';
 import '../bootstrap.css';
 import './ContactAdd.css';
 
+
+// Component for the Add Contact button and modal.
 class ContactAdd extends React.Component {
   constructor(props) {
     super(props);
@@ -10,7 +12,8 @@ class ContactAdd extends React.Component {
   }
 
 componentDidMount() {
-if (localStorage.getItem('items') === '[]') {
+  // If there is no contacts array, or if the array is empty, starts the app with the modal open.
+if (localStorage.getItem('items') === '[]' || localStorage.getItem('items') === null) {
       this.setState({
         show: true,
       });
@@ -30,9 +33,6 @@ if (localStorage.getItem('items') === '[]') {
   }
 
   handleSave = (event) => {
-    if (localStorage.getItem('items') === null) {
-      localStorage.setItem('items', '[]')
-    }
     const dat = JSON.parse(localStorage.getItem('items'));
     dat.push({
       name: {

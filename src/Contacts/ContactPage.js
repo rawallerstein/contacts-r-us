@@ -6,13 +6,14 @@ import ContactPagePicture from './ContactPagePicture';
 import '../bootstrap.css'
 import './ContactAdd.css';
 
-
+// Component for displaying single contact information on the right side of the app.
 class Cpage extends React.Component {
   constructor(props) {
     super(props);
     this.state = { index: this.props.index };
   }
 
+  // Component looks to receive new props. Previously would not always show currently selected contact.
   static getDerivedStateFromProps(newProps, oldState) {
     if (newProps.index === oldState.index) {
       return null;

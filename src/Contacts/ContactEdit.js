@@ -2,6 +2,7 @@ import React from 'react';
 import { Modal, Button } from 'react-bootstrap';
 import '../bootstrap.css';
 
+// Component for the Edit Contact button and modal.
 class ContactEdit extends React.Component {
   constructor(props) {
     super(props);
@@ -11,7 +12,8 @@ class ContactEdit extends React.Component {
       index: this.props.index,
     }
   }
-
+  // Same as ContactDelete.
+  // Would occasionally edit previous contact. Not a common bug, but did occur during development.
   static getDerivedStateFromProps(newProps, oldState) {
     if (newProps.index === oldState.index) {
       return null;
@@ -44,6 +46,7 @@ class ContactEdit extends React.Component {
     localStorage.setItem('items', JSON.stringify(dat));}
 
   render() {
+    // Button only appears if there is a contact to edit.
     if (this.state.items[this.state.index] !== undefined) {
       return (
         <>

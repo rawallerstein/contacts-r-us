@@ -2,7 +2,7 @@ import React from 'react';
 import ContactAdd from './ContactAdd';
 import '../bootstrap.css';
 
-
+// Component for displaying list of contacts on the left side of the app.
 class RandomUser extends React.Component {
   constructor(props) {
     super(props);
@@ -17,7 +17,7 @@ class RandomUser extends React.Component {
         <div>
       Error: {error.message}
       </div>
-);
+      );
     } else if (!isLoaded) {
       return <div>Loading...</div>;
     } else {
@@ -34,7 +34,6 @@ class RandomUser extends React.Component {
           )}
           <ContactAdd />
         </div>
-
       );
     }
   }

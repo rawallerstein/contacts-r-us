@@ -4,9 +4,11 @@ import './App.css';
 import ContactPage from './Contacts/ContactPage';
 import RandomUser from './Contacts/RandomUser';
 
-
+// The Main App Component
 class App extends Component {
 
+// State contains contact info as well as the array of contacts
+// taken from localStorage.
 
   state = {
     name: 'Add contacts to begin',
@@ -15,29 +17,30 @@ class App extends Component {
     desc: '',
     checked: true,
     items: JSON.parse(localStorage.getItem('items')),
-    item: JSON.parse(localStorage.getItem('items')),
     index: 0,
   }
 
-
-
   componentDidMount() {
-    if (this.state.items[0]) {
+    // Initializes contacts array if none is found
+    if (localStorage.getItem('items') === null) {
+      localStorage.setItem('items', '[]')
+    }
+
+    // Initiliazes single contact for contact page if one exists.
+    if (this.state.items !== null && typeof this.state.items[0] != 'undefined') {
       this.setState({
         name: `${this.state.items[0].name.first} ${this.state.items[0].name.last}`,
         phone: this.state.items[0].phone,
         email: this.state.items[0].email,
         desc: this.state.items[0].desc,
+        picture: this.state.items[0].picture.large,
       });
     }
 
-    if (this.state.items[0]) {
-      this.setState({
-        picture: this.state.items[0].picture.large,
-      })
-    }
-
-    fetch('https://randomuser.me/api/?results=100')
+    // Gets array of random users from the randomuser API.
+    // This is mostly to demonstrate ability of app to do so if client needs it.
+    // Will be removed in full production.
+    fetch('https://randomuser.me/api/?results=25')
       .then(res => res.json())
       .then(
         (result) => {
@@ -56,15 +59,11 @@ class App extends Component {
           });
         }
       )
-    if (this.state.items === null) {
-      this.setState({
-        items: [],
-        item: []
-      })
-    }
+    // The "demo" mode toggle that changes contacts array to the randomly generated one.
     document.addEventListener('keydown', this.handleCheckboxChange);
   }
 
+  // The actual keydown handler
   handleCheckboxChange = (event) => {
     if (event.key === 'Escape') {
       this.setState({
@@ -77,10 +76,11 @@ class App extends Component {
       })
     } else {
       this.setState({
-        items: this.state.item})
+        items: JSON.parse(localStorage.getItem('items'))})
     }
 }
 
+  // Handler for clicking on a contact on the left. Sets the info for the contact page.
   clickHandler = (event) => {
     if (this.state.items[event.currentTarget.attributes.id.value].picture) {
       this.setState({
@@ -94,8 +94,6 @@ class App extends Component {
       desc: this.state.items[event.currentTarget.attributes.id.value].desc,
       index: event.currentTarget.attributes.id.value,
     })
-    console.log(this.state.index);
-    console.log(this.state.picture)
   }
 
 
