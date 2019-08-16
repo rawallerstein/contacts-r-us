@@ -12,16 +12,9 @@ class ContactEdit extends React.Component {
       index: this.props.index,
     }
   }
+
   // Same as ContactDelete.
   // Would occasionally edit previous contact. Not a common bug, but did occur during development.
-  static getDerivedStateFromProps(newProps, oldState) {
-    if (newProps.index === oldState.index) {
-      return null;
-    }
-    return {
-      index: newProps.index,
-    };
-  }
 
   handleClose = () => {
     this.setState({
@@ -47,7 +40,7 @@ class ContactEdit extends React.Component {
 
   render() {
     // Button only appears if there is a contact to edit.
-    if (this.state.items[this.state.index] !== undefined) {
+    if (typeof this.state.items[this.state.index] !== 'undefined') {
       return (
         <>
       <Button variant="primary" onClick={this.handleShow}>

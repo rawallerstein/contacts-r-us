@@ -10,14 +10,7 @@ class RandomUser extends React.Component {
     };
   }
 
-  static getDerivedStateFromProps(newProps, oldState) {
-    if (newProps.items === oldState.items) {
-      return null;
-    }
-    return {
-      items: newProps.items,
-    };
-  }
+
 
   render() {
     const { error, isLoaded, items } = this.props;

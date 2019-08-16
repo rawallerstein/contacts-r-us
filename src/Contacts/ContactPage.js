@@ -13,21 +13,25 @@ const ReactMarkdown = require('react-markdown')
 class Cpage extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { index: this.props.index };
+    this.state = {
+      index: this.props.index,
+      items: this.props.items,
+    };
   }
 
   // Component looks to receive new props. Previously would not always show currently selected contact.
   static getDerivedStateFromProps(newProps, oldState) {
-    if (newProps.index === oldState.index) {
+    if (newProps.index === oldState.index && newProps.items === oldState.items) {
       return null;
     }
     return {
       index: newProps.index,
+      items: newProps.items,
     };
   }
 
   render() {
-    if (this.props.items) {
+    if (this.state.items) {
       return (
     <div >
       <div className="ContactPageContact">
@@ -39,8 +43,8 @@ class Cpage extends React.Component {
         <ReactMarkdown className="ContactPageDescription" source={this.props.desc} />
       </div>
         <b style={{display: 'flex', 'height': '9vh'}}>
-          <ContactEdit items={this.props.items} index={this.state.index} />
-          <ContactDelete items={this.props.items} index={this.state.index}/>
+          <ContactEdit items={this.state.items} index={this.state.index} />
+          <ContactDelete items={this.state.items} index={this.state.index}/>
         </b>
     </div>
 );

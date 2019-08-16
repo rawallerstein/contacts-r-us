@@ -8,20 +8,11 @@ class ContactDelete extends React.Component {
     super(props);
     this.state = {
       show: false,
-      index: props.index,
-      items: props.items,
     }
   }
+
 // Checks for props updates to avoid accidently deleting a previous contact.
 // Not a common bug, but was an issue in the past.
-static getDerivedStateFromProps(newProps, oldState) {
-    if (newProps.index === oldState.index) {
-      return null;
-    }
-    return {
-      index: newProps.index,
-    };
-}
 
 handleClose = () => {
 this.setState({
@@ -37,13 +28,13 @@ this.setState({
 
 handleDelete = () => {
 const dat = JSON.parse(localStorage.getItem('items'));
-dat.splice(this.state.index, 1);
+dat.splice(this.props.index, 1);
 localStorage.setItem('items', JSON.stringify(dat))
 }
 
 render() {
   // Button only appears if there is a contact to delete.
-  if (this.state.items[this.state.index] !== undefined) {
+  if (this.props.items[this.props.index] !== undefined) {
     return (
       <>
       <Button variant="danger" onClick={this.handleShow}>
