@@ -1,10 +1,10 @@
 .btn {
   margin-left: .5vw;
-  margin-top: 1vh;
   margin-right: .5vw;
   width: 34vw;
 }
 
 .ContactAdd {
-  width: 20vw;
+  margin-top: 1vh;
+  width: 25vw;
 }

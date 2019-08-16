@@ -42,10 +42,10 @@ class Cpage extends React.Component {
         <br />
         <ReactMarkdown className="ContactPageDescription" source={this.props.desc} />
       </div>
-        <b style={{display: 'flex', 'height': '9vh'}}>
+      <b style={{display: 'flex', 'height': '9vh'}}>
           <ContactEdit items={this.state.items} index={this.state.index} />
           <ContactDelete items={this.state.items} index={this.state.index}/>
-        </b>
+      </b>
     </div>
 );
 } else {
