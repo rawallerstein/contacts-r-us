@@ -82,7 +82,7 @@ class ContactEdit extends React.Component {
           <Button variant="secondary" onClick={this.handleClose}>
             Close
           </Button>
-          <input className="btn btn-primary" type="submit" value="Save Contact" variant="primary" />
+          <input className="btn btn-primary" type="submit" value="Save" variant="primary" />
         </Modal.Footer>
         </form>
       </Modal>

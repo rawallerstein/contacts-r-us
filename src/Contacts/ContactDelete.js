@@ -52,7 +52,7 @@ render() {
           <Button variant="secondary" onClick={this.handleClose}>
             Close
           </Button>
-          <input className="btn btn-danger" type="submit" value="Delete Contact" variant="danger" />
+          <input className="btn btn-danger" type="submit" value="Delete" variant="danger" />
         </Modal.Footer>
         </form>
       </Modal>
