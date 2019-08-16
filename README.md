@@ -1,12 +1,5 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-TODO: Make the damn thing less ugly.
-
-TODO: Re-add demo mode as keydown.
-
-TODO: Do something with all the whitespace.
-
-
 ## Available Scripts
 
 In the project directory, you can run:
