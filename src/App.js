@@ -15,7 +15,6 @@ class App extends Component {
     phone: '',
     email: '',
     desc: '',
-    checked: true,
     items: JSON.parse(localStorage.getItem('items')),
     index: 0,
   }
@@ -46,7 +45,7 @@ class App extends Component {
         (result) => {
           this.setState({
             isLoaded: true,
-            results: result.results.sort((a, b) => a.name.first.localeCompare(b.name.first))
+            results: result.results
           });
         },
         // Note: it's important to handle errors here
@@ -59,24 +58,21 @@ class App extends Component {
           });
         }
       )
-    // The "demo" mode toggle that changes contacts array to the randomly generated one.
-    document.addEventListener('keydown', this.handleCheckboxChange);
+    // The "demo" mode toggle that adds the randomly generated contacts to the existing ones.
+    // Currently, requries a refresh to update the app. Looking for a fix.
+    document.addEventListener('keydown', this.handleFetch);
   }
 
-  // The actual keydown handler
-  handleCheckboxChange = (event) => {
-    if (event.key === 'Escape') {
+  // The actual keydown handler.
+  // Press escape and refresh the page to see changes.
+  handleFetch = (event) => {
+    if (event.key === 'Escape' && this.state.isLoaded === true) {
+      const dat = JSON.parse(localStorage.getItem('items'));
+      const newDat = dat.concat(this.state.results);
+      localStorage.setItem('items', JSON.stringify(newDat));
       this.setState({
-        checked: !this.state.checked,
-      });
-    }
-    if (this.state.checked === false) {
-      this.setState({
-        items: this.state.results
+        items: JSON.parse(localStorage.getItem('items')),
       })
-    } else {
-      this.setState({
-        items: JSON.parse(localStorage.getItem('items'))})
     }
 }
 

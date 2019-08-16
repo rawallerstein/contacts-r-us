@@ -51,11 +51,11 @@ if (localStorage.getItem('items') === '[]' || localStorage.getItem('items') === 
   render() {
     return (
     <>
-      <a style={{width: '29.5vw', 'justify-self': 'center', 'padding-bottom': '10px'}}>
+      <p style={{width: '29.5vw', 'justifySelf': 'center', 'paddingBottom': '10px'}}>
 <Button variant="info" className="ContactAdd" onClick={this.handleShow}>
         Add Contact
 </Button>
-</a>
+</p>
 
       <Modal show={this.state.show} onHide={this.handleClose}>
         <Modal.Header closeButton>
@@ -64,27 +64,27 @@ if (localStorage.getItem('items') === '[]' || localStorage.getItem('items') === 
         <form onSubmit={this.handleSave}>
           <Modal.Body>
           <div className="form-group">
-            <label for="AddFirstName">First Name</label>
+            <label htmlFor="AddFirstName">First Name</label>
             <input type="text" className="form-control" placeholder="John"/>
           </div>
           <div className="form-group">
-            <label for="AddLastName">Last Name</label>
+            <label htmlFor="AddLastName">Last Name</label>
             <input type="text" className="form-control" placeholder="Doe"/>
           </div>
           <div>
-            <label for="AddPhone">Phone Number</label>
+            <label htmlFor="AddPhone">Phone Number</label>
             <input type="tel" className="form-control" placeholder="(555)-555-5555"/>
           </div>
           <div>
-            <label for="AddEmail">Email</label>
+            <label htmlFor="AddEmail">Email</label>
             <input type="email" className="form-control" placeholder="john.doe@gmail.com"/>
           </div>
           <div>
-            <label for="AddPicture">Image URL</label>
+            <label htmlFor="AddPicture">Image URL</label>
             <input type="url" className="form-control" placeholder="https://website.com/image.jpg"/>
           </div>
           <div>
-            <label for="AddDesc">Description</label>
+            <label htmlFor="AddDesc">Description</label>
           <textarea className="form-control" placeholder="He's a pretty good fella!"/>
           </div>
           </Modal.Body>

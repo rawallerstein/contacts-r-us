@@ -31,19 +31,32 @@ class Cpage extends React.Component {
       return (
     <div >
       <div className="ContactPageContact">
-        <div className="container responsive" style={{height: '20vh', 'padding-top': '3vh'}}><ContactPagePicture picture={this.props.picture} /></div>
+        <div className="container responsive" style={{height: '20vh', 'paddingTop': '3vh'}}><ContactPagePicture picture={this.props.picture} /></div>
         <h2 className="ContactPageName">{this.props.name}</h2>
         <h2 className="ContactPagePhone">{this.props.phone}</h2>
         <h2 className="ContactPageEmail">{this.props.email}</h2>
         <br />
         <ReactMarkdown className="ContactPageDescription" source={this.props.desc} />
       </div>
-      <a style={{display: 'flex', 'height': '9vh'}}> <ContactEdit items={this.props.items} index={this.state.index} />
-      <ContactDelete items={this.props.items} index={this.state.index}/> </a>
+        <b style={{display: 'flex', 'height': '9vh'}}>
+          <ContactEdit items={this.props.items} index={this.state.index} />
+          <ContactDelete items={this.props.items} index={this.state.index}/>
+        </b>
     </div>
 );
 } else {
-  return <div />
+  return (
+    <div >
+      <div className="ContactPageContact">
+        <div className="container responsive" style={{height: '20vh', 'paddingTop': '3vh'}} />
+        <h2 className="ContactPageName">Add contacts to begin</h2>
+        <h2 className="ContactPagePhone"> </h2>
+        <h2 className="ContactPageEmail"> </h2>
+        <br />
+        <ReactMarkdown className="ContactPageDescription" />
+      </div>
+    </div>
+)
 }
 }
 }

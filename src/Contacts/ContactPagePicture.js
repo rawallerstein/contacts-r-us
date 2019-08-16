@@ -6,7 +6,7 @@ import React from 'react';
 class ContactPagePicture extends React.Component {
   render() {
     if (this.props.picture) {
-      return <img style={{'max-height': '20vh'}} src={this.props.picture} alt={"Portrait"} />
+      return <img style={{'maxHeight': '20vh'}} src={this.props.picture} alt={"Portrait"} />
     } else {
       return null;
     }

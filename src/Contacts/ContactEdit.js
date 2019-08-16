@@ -61,27 +61,27 @@ class ContactEdit extends React.Component {
         <form onSubmit={this.handleSaveEdit}>
           <Modal.Body>
           <div className="form-group">
-            <label for="AddFirstName" >First Name</label>
+            <label htmlFor="AddFirstName" >First Name</label>
             <input type="text" className="form-control"  defaultValue={this.state.items[this.state.index].name.first} />
           </div>
           <div className="form-group">
-            <label for="AddLastName">Last Name</label>
+            <label htmlFor="AddLastName">Last Name</label>
             <input type="text" className="form-control" defaultValue={this.state.items[this.state.index].name.last} />
           </div>
           <div>
-            <label for="AddPhone">Phone Number</label>
+            <label htmlFor="AddPhone">Phone Number</label>
             <input type="tel" className="form-control"  defaultValue={this.state.items[this.state.index].phone}/>
           </div>
           <div>
-            <label for="AddEmail">Email</label>
+            <label htmlFor="AddEmail">Email</label>
             <input type="email" className="form-control" defaultValue={this.state.items[this.state.index].email} />
           </div>
           <div>
-            <label for="AddPicture">Image URL</label>
+            <label htmlFor="AddPicture">Image URL</label>
             <input type="url" className="form-control" defaultValue={this.state.items[this.state.index].picture.large}/>
           </div>
           <div>
-            <label for="AddDesc">Description</label>
+            <label htmlFor="AddDesc">Description</label>
           <textarea className="form-control" defaultValue={this.state.items[this.state.index].desc}/>
           </div>
           </Modal.Body>
