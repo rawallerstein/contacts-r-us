@@ -8,8 +8,6 @@ class ContactEdit extends React.Component {
     super(props);
     this.state = {
       show: false,
-      items: this.props.items,
-      index: this.props.index,
     }
   }
 
@@ -30,17 +28,17 @@ class ContactEdit extends React.Component {
 
   handleSaveEdit = (event) => {
     const dat = JSON.parse(localStorage.getItem('items'));
-    dat[this.state.index].name.first = event.target[0].value;
-    dat[this.state.index].name.last = event.target[1].value;
-    dat[this.state.index].phone = event.target[2].value;
-    dat[this.state.index].email = event.target[3].value;
-    dat[this.state.index].desc = event.target[5].value;
-    dat[this.state.index].picture.large = event.target[4].value;
+    dat[this.props.index].name.first = event.target[0].value;
+    dat[this.props.index].name.last = event.target[1].value;
+    dat[this.props.index].phone = event.target[2].value;
+    dat[this.props.index].email = event.target[3].value;
+    dat[this.props.index].desc = event.target[5].value;
+    dat[this.props.index].picture.large = event.target[4].value;
     localStorage.setItem('items', JSON.stringify(dat));}
 
   render() {
     // Button only appears if there is a contact to edit.
-    if (typeof this.state.items[this.state.index] !== 'undefined') {
+    if (typeof this.props.items[this.props.index] !== 'undefined') {
       return (
         <>
       <Button variant="primary" onClick={this.handleShow}>
@@ -55,27 +53,27 @@ class ContactEdit extends React.Component {
           <Modal.Body>
           <div className="form-group">
             <label htmlFor="AddFirstName" >First Name</label>
-            <input type="text" className="form-control"  defaultValue={this.state.items[this.state.index].name.first} />
+            <input type="text" className="form-control"  defaultValue={this.props.items[this.props.index].name.first} />
           </div>
           <div className="form-group">
             <label htmlFor="AddLastName">Last Name</label>
-            <input type="text" className="form-control" defaultValue={this.state.items[this.state.index].name.last} />
+            <input type="text" className="form-control" defaultValue={this.props.items[this.props.index].name.last} />
           </div>
           <div>
             <label htmlFor="AddPhone">Phone Number</label>
-            <input type="tel" className="form-control"  defaultValue={this.state.items[this.state.index].phone}/>
+            <input type="tel" className="form-control"  defaultValue={this.props.items[this.props.index].phone}/>
           </div>
           <div>
             <label htmlFor="AddEmail">Email</label>
-            <input type="email" className="form-control" defaultValue={this.state.items[this.state.index].email} />
+            <input type="email" className="form-control" defaultValue={this.props.items[this.props.index].email} />
           </div>
           <div>
             <label htmlFor="AddPicture">Image URL</label>
-            <input type="url" className="form-control" defaultValue={this.state.items[this.state.index].picture.large}/>
+            <input type="url" className="form-control" defaultValue={this.props.items[this.props.index].picture.large}/>
           </div>
           <div>
             <label htmlFor="AddDesc">Description</label>
-          <textarea className="form-control" defaultValue={this.state.items[this.state.index].desc}/>
+          <textarea className="form-control" defaultValue={this.props.items[this.props.index].desc}/>
           </div>
           </Modal.Body>
         <Modal.Footer>
